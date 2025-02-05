@@ -52,10 +52,11 @@ const LandingPage = () => {
         <Image
           src={"/images/heroImg.png"}
           alt="My Pic"
-          width={500}
-          height={500}
-          className="lg:!h-full lg:!w-auto !w-[400px] lg:absolute z-[5]"
+          width={500} // Keep the original width for better optimization
+          height={500} // Keep the original height for better optimization
+          className="w-[400px] h-auto lg:w-[500px] lg:h-[500px] lg:!h-full lg:!w-auto object-cover z-[5] lg:absolute"
         />
+
         <Image
           src={"/images/vectors/heroBg.svg"}
           className="vector sm:w-[155px] sm:h-[155px] w-[75px] h-[75px] absolute top-[40%] left-0 z-[4]"
