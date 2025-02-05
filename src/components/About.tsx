@@ -34,7 +34,7 @@ const About = () => {
               alt="My Pic"
               width={400}
               height={500}
-              className="rounded-3xl shadow-md object-cover object-center !w-[350px] h-full"
+              className="rounded-3xl shadow-md object-cover object-center w-[350px] h-full"
               layout="responsive"
               quality={100}
             ></Image>
