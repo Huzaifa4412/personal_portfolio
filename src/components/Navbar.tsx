@@ -80,7 +80,7 @@ const Navbar = () => {
           onClick={() => setIsOpen(!isOpen)}
         ></Image>
         {isOpen && (
-          <div className="w-full container  py-[32px] px-[8px] h-screen bg-background fixed top-0 left-0 z-[9999]">
+          <div className="w-full container  py-[32px] px-[8px] h-full bg-background absolute top-0 left-0 z-[9999]">
             <div className="flex justify-between">
               <div className="logo flex items-center  gap-2 text-white font-bold ">
                 <Image
@@ -126,7 +126,7 @@ const Navbar = () => {
               </ul>
             </div>
 
-            <footer className="absolute bottom-5 flex left-0 justify-center w-full items-center">
+            <footer className="absolute bottom-10 flex left-0 justify-center w-full items-center">
               <Image
                 src={"/images/Linkedin.svg"}
                 alt="Linkedin"

@@ -14,8 +14,8 @@ const About = () => {
               Hello, i’m Huzaifa!
               <br />
               <br />
-              I’m a self-taught front-end developer based in Kyiv, Ukraine. I
-              can develop responsive websites from scratch and raise them into
+              I’m a self-taught front-end developer based in Karachi, Pakistan.
+              I can develop responsive websites from scratch and raise them into
               modern user-friendly web experiences.
               <br />
               <br />
@@ -35,7 +35,6 @@ const About = () => {
               width={400}
               height={500}
               className="rounded-3xl shadow-md object-cover object-center !w-[350px] h-full"
-              layout="responsive"
               quality={100}
             ></Image>
             <Image
