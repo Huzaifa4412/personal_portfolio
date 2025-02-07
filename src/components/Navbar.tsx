@@ -33,7 +33,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                href="/"
+                href="/projects"
                 className="text-gray hover:text-white font-medium text-[16px]"
               >
                 <span className="text-primary">#</span>works
@@ -80,7 +80,7 @@ const Navbar = () => {
           onClick={() => setIsOpen(!isOpen)}
         ></Image>
         {isOpen && (
-          <div className="w-full container  py-[32px] px-[8px] h-full bg-background absolute top-0 left-0 z-[9999]">
+          <div className="w-full container  py-[32px] px-[8px] h-[100dvh] bg-background absolute top-0 left-0 z-[9999]">
             <div className="flex justify-between">
               <div className="logo flex items-center  gap-2 text-white font-bold ">
                 <Image
@@ -102,14 +102,17 @@ const Navbar = () => {
             </div>
 
             <div className="nav-items mt-20">
-              <ul className="flex flex-col gap-5">
+              <ul
+                className="flex flex-col gap-5"
+                onClick={() => setIsOpen(!isOpen)}
+              >
                 <li className="text-3xl hover:text-white">
                   <Link href={"/"}>
                     <span className="text-primary">#</span>home
                   </Link>
                 </li>
                 <li className="text-3xl hover:text-white">
-                  <Link href={"/"}>
+                  <Link href="/projects">
                     <span className="text-primary">#</span>works
                   </Link>
                 </li>

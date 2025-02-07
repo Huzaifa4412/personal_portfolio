@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useContext } from "react";
 import Styles from "./project_section.module.css";
 // import data from "@/project.json";
 import ProjectCard from "./ProjectCard";
@@ -18,20 +18,23 @@ import { EffectCoverflow } from "swiper/modules";
 // import { EffectCards } from "swiper/modules";s
 import "swiper/css/effect-cube";
 import "swiper/css/pagination";
-import { client } from "@/sanity/lib/client";
+// import { client } from "@/sanity/lib/client";
 import { ProjectType } from "../../../Typing";
+import { ProjectsContext } from "@/context/projectsContext";
 
-const getProjects = async () => {
-  const query = `*[_type == "projects"]`;
-  const data: ProjectType[] = await client.fetch(query);
-  return data;
-};
+// const getProjects = async () => {
+//   const query = `*[_type == "projects"]`;
+//   const data: ProjectType[] = await client.fetch(query);
+//   return data;
+// };
 
 const Projects = () => {
+  const context = useContext(ProjectsContext);
   const [data, setData] = React.useState<ProjectType[] | null>(null);
+
   React.useEffect(() => {
-    getProjects().then((data) => setData(data));
-  }, []);
+    setData(context);
+  }, [context]);
   return (
     <div className="!mt-20 container p-0">
       <Heading props={{ text: "projects" }} />
