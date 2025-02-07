@@ -30,6 +30,11 @@ export const projects = defineType({
             })
         }),
         defineField({
+            name: "isCompleted",
+            title: "Is Completed",
+            type: "boolean",
+        }),
+        defineField({
             name: "project_image",
             title: "Project Image",
             type: "image",

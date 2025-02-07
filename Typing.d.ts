@@ -10,6 +10,7 @@ interface SanityImage {
 
 export interface ProjectType {
     name: string;
+    isCompleted: boolean
     technologies: string[];
     description: string;
     project_image: SanityImage;
