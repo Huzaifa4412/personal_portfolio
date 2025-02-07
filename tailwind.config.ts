@@ -15,6 +15,9 @@ export default {
         white: "#FFFFFF",
         black: "#1E1E1E"
       },
+      screens: {
+        "xl-1440": '1440px'
+      }
     },
   },
   plugins: [],

@@ -2,3 +2,16 @@
     color: white;
     font-size: 32px;
 }
+
+@media screen and (max-width: 768px) {
+    .cubeEffect {
+        width: 70%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .cubeEffect {
+        width: 100%;
+    }
+}
