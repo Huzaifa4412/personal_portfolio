@@ -16,7 +16,7 @@ const LandingPage: React.FC = () => {
       y: [0, -10, 0], // Subtle vertical float
       rotate: [0, 1, -1, 0], // Minimal rotation
       transition: {
-        duration: 2,
+        duration: 2.5,
         repeat: Infinity,
         repeatType: "loop",
         ease: "easeInOut",
@@ -152,7 +152,7 @@ const LandingPage: React.FC = () => {
 
         <motion.div
           variants={slowPulseVariants}
-          className="border border-primary px-10 absolute top-full left-1/2 -translate-x-1/2 text-[16px] w-max text-center"
+          className="border border-primary px-10 absolute top-full  -translate-x-1/2 text-[16px] w-max text-center"
         >
           Currently working on Portfolio
         </motion.div>
