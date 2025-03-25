@@ -1,85 +1,72 @@
 "use client";
 import React from "react";
-import PrimaryBtn from "./PrimaryBtn";
 import Image from "next/image";
 import Typewriter from "typewriter-effect";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
+import PrimaryBtn from "./PrimaryBtn";
 
-const LandingPage = () => {
-  // Precise animation variants to maintain original positioning
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.7,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const imageVariants = {
+const LandingPage: React.FC = () => {
+  // Minimalistic Repeating Animations
+  const subtleFloatVariants: Variants = {
     initial: {
-      scale: 0.9,
-      opacity: 0,
-      position: "relative", // Ensure original positioning
-      top: "auto",
-      left: "auto",
+      y: 0,
+      rotate: 0,
     },
     animate: {
-      scale: 1,
-      opacity: 1,
+      y: [0, -10, 0], // Subtle vertical float
+      rotate: [0, 1, -1, 0], // Minimal rotation
       transition: {
-        duration: 0.8,
-        type: "spring",
-        stiffness: 50,
+        duration: 2,
+        repeat: Infinity,
+        repeatType: "loop",
+        ease: "easeInOut",
       },
     },
   };
 
-  const vectorVariants = {
+  const slowPulseVariants: Variants = {
+    initial: {
+      scale: 1,
+      opacity: 1,
+    },
+    animate: {
+      scale: [1, 1.02, 1],
+      opacity: [1, 0.9, 1],
+      transition: {
+        duration: 3,
+        repeat: Infinity,
+        repeatType: "loop",
+        ease: "easeInOut",
+      },
+    },
+  };
+
+  const gentleRotateVariants: Variants = {
     initial: {
       rotate: 0,
-      scale: 0.5,
-      opacity: 0,
-      position: "absolute", // Maintain absolute positioning
     },
     animate: {
-      rotate: 360,
-      scale: 1,
-      opacity: 1,
+      rotate: [0, 2, -2, 0],
       transition: {
-        duration: 1,
-        type: "spring",
-        stiffness: 100,
+        duration: 4,
+        repeat: Infinity,
+        repeatType: "loop",
+        ease: "easeInOut",
       },
     },
   };
 
   return (
     <motion.div
-      initial="hidden"
-      animate="visible"
-      variants={containerVariants}
+      initial="initial"
+      animate="animate"
       className="container flex h-max lg:h-[430] lg:flex-row flex-col gap-8 items-center !justify-center"
     >
-      <motion.div
-        variants={itemVariants}
-        className="part1 lg:w-1/2 w-full flex flex-col !justify-center gap-4"
-      >
-        <motion.h2 variants={itemVariants} className="text-3xl font-semibold">
+      <div className="part1 lg:w-1/2 w-full flex flex-col !justify-center gap-4">
+        <motion.h2
+          variants={subtleFloatVariants}
+          className="text-3xl font-semibold"
+        >
           <span className="text-white font-bold">Huzaifa</span> is a{" "}
           <span className="text-primary">
             <Typewriter
@@ -114,25 +101,20 @@ const LandingPage = () => {
           </span>
         </motion.h2>
 
-        <motion.p variants={itemVariants} className="w-[70%]">
+        <motion.p variants={slowPulseVariants} className="w-[70%]">
           He crafts responsive websites where technologies meet creativity
         </motion.p>
 
-        <motion.div variants={itemVariants}>
+        <motion.div variants={gentleRotateVariants}>
           <PrimaryBtn text="Contact me !!" />
         </motion.div>
-      </motion.div>
+      </div>
 
       <motion.div
-        variants={itemVariants}
+        variants={subtleFloatVariants}
         className="relative lg:w-1/2 w-full h-full flex flex-col items-center"
       >
-        <motion.div
-          initial="initial"
-          animate="animate"
-          variants={imageVariants}
-          className="lg:relative z-[5]"
-        >
+        <motion.div variants={slowPulseVariants} className="lg:relative z-[5]">
           <Image
             src={"/images/heroImg.png"}
             alt="My Pic"
@@ -143,9 +125,7 @@ const LandingPage = () => {
         </motion.div>
 
         <motion.div
-          initial="initial"
-          animate="animate"
-          variants={vectorVariants}
+          variants={gentleRotateVariants}
           className="vector sm:w-[155px] sm:h-[155px] w-[75px] h-[75px] absolute top-[40%] left-0 z-[4]"
         >
           <Image
@@ -158,9 +138,7 @@ const LandingPage = () => {
         </motion.div>
 
         <motion.div
-          initial="initial"
-          animate="animate"
-          variants={vectorVariants}
+          variants={gentleRotateVariants}
           className="vector w-[84px] h-[84px] absolute top-[52%] right-[30%] z-[6]"
         >
           <Image
@@ -173,7 +151,7 @@ const LandingPage = () => {
         </motion.div>
 
         <motion.div
-          variants={itemVariants}
+          variants={slowPulseVariants}
           className="border border-primary px-10 absolute top-full left-1/2 -translate-x-1/2 text-[16px] w-max text-center"
         >
           Currently working on Portfolio
