@@ -76,3 +76,40 @@ body {
   border-radius: 4px;
   background-color: #ABB2BF;
 }
+
+
+/* * Contact map responsive */
+@media (max-width: 900px) {
+  .content-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .map-container,
+  .form-container {
+    width: 100%;
+    height: auto;
+    min-height: 450px;
+    border-radius: 16px;
+  }
+
+  .map-container iframe {
+    width: 100%;
+    height: 100%;
+  }
+
+  .map-container {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 650px) {
+  .info-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact-info {
+    margin-top: 30px;
+  }
+}

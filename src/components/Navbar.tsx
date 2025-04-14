@@ -119,12 +119,12 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li className="text-3xl hover:text-white">
-                  <Link href={"/"}>
+                  <Link href={"/aboutMe"}>
                     <span className="text-primary">#</span>about-me
                   </Link>
                 </li>
                 <li className="text-3xl hover:text-white">
-                  <Link href={"/"}>
+                  <Link href={"/contactMe"}>
                     <span className="text-primary">#</span>contacts
                   </Link>
                 </li>
