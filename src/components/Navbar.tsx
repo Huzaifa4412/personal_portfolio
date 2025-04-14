@@ -11,16 +11,18 @@ const Navbar = () => {
     <>
       {/* Large Screen View Starts Here */}
       <div className="md:flex hidden container py-[32px] px-[8px]  items-center justify-between">
-        <div className="logo flex items-center  gap-2 text-white font-bold ">
-          <Image
-            src={"/images/Logo.svg"}
-            alt="Logo"
-            width={16}
-            height={16}
-            className="w-4 h-4"
-          />
-          Huzaifa
-        </div>
+        <Link href={"/"}>
+          <div className="logo flex items-center  gap-2 text-white font-bold ">
+            <Image
+              src={"/images/Logo.svg"}
+              alt="Logo"
+              width={16}
+              height={16}
+              className="w-4 h-4"
+            />
+            Huzaifa
+          </div>
+        </Link>
         <div className="nav-items">
           <ul className="flex items-center gap-[32px]">
             <li>
@@ -41,7 +43,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                href="/"
+                href="/aboutMe"
                 className="text-gray hover:text-white font-medium text-[16px]"
               >
                 <span className="text-primary">#</span>about-me
@@ -49,7 +51,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                href="/"
+                href="/contactMe"
                 className="text-gray hover:text-white font-medium text-[16px]"
               >
                 <span className="text-primary">#</span>contacts

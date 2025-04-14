@@ -17,7 +17,10 @@ export default {
       },
       screens: {
         "xl-1440": '1440px'
-      }
+      },
+      animation: {
+        'spin-slow': 'spin 8s linear infinite',
+      },
     },
   },
   plugins: [],
